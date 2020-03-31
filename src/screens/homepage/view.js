@@ -2,6 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import userPic from "../../img/user.png";
 import "./style.scss";
+import style from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -16,31 +17,12 @@ class Homepage extends React.Component {
   }
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          height: "100%",
-          flexDirection: "column",
-          height: "100vh"
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flex: 0.55,
-            alignSelf: "center",
-            alignItems: "center",
-            width: "50%",
-            //border: "2px solid red",
-            justifyContent: "center",
-            flexDirection: "column"
-          }}
-        >
-          <p style={{ color: "white", fontSize: 20, alignSelf: "flex-start" }}>
+      <div style={style.container}>
+        <div style={style.des_view}>
+          <p style={style.header_text}>
             Hi , I'm Kunal Self taugh <br></br> programer
           </p>
-          <p style={{ color: "white" }}>
+          <p style={style.des_text}>
             Hi , I am a self taught Software Engineer with over 3.7 year of
             experiences in IT Industry. I got graduated from Electronics and
             Telecommunication Engineering field from Mumbai University. I am
@@ -48,32 +30,10 @@ class Homepage extends React.Component {
             opportunity to explore my knowledge in various dimension.
           </p>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flex: 0.32,
-            //border: "2px solid red",
-            flexDirection: "column"
-          }}
-        >
+        <div style={style.img_social_button_view}>
           <Image src={userPic} roundedCircle />
-          <div
-            style={{
-              display: "flex",
-              width: "15%",
-              borderBottom: "2px solid white"
-            }}
-          ></div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "10%"
-            }}
-          >
+          <div style={style.line}></div>
+          <div style={style.button_view}>
             <FontAwesomeIcon
               onClick={() => {
                 window.open(
