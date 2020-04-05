@@ -10,7 +10,7 @@ import Contact from "../../screens/contact";
 
 class NavBar extends React.Component {
   style = {
-    color: "#ffffff"
+    color: "#ffffff",
   };
   render() {
     return (
@@ -18,7 +18,7 @@ class NavBar extends React.Component {
         <Navbar>
           <Nav>
             <Link style={this.style} to="/">
-              Home
+              About
             </Link>
             <Link style={this.style} to="/project">
               Projects
