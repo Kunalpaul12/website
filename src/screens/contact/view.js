@@ -5,6 +5,9 @@ import { Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./style.scss";
 import emailjs from "emailjs-com";
+import Spinner from "react-bootstrap/Spinner";
+import config from "../../config/email";
+import { validator } from "./validator";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -13,68 +16,33 @@ class Contact extends React.Component {
       name: "",
       email: "",
       message: "",
+      spinner: false,
     };
   }
-  send = () => {
+  send = async () => {
     let { name, email, message } = this.state;
-    let v = this.validator();
+    let v = validator(this.state);
     if (!v.success) {
       alert(v.data);
       return;
     }
-    emailjs
-      .send(
-        "gmail",
-        "template_N6yLgIN9",
+    this.setState({ spinner: true });
+    try {
+      await emailjs.send(
+        config.service,
+        config.templeteID,
         { name, email, message },
-        "user_dRtPKL0SFSbH2PR2yswJT"
-      )
-      .then(
-        (response) => {
-          alert("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          alert("FAILED...", err);
-        }
+        config.userID
       );
+      alert("SUCCESS!");
+    } catch (data) {
+      alert("FAILED...");
+    }
+    this.setState({ spinner: false });
   };
-  validator = () => {
-    let { name, email, message } = this.state;
-    if (name === "") {
-      return {
-        success: 0,
-        data: "Please provied name",
-      };
-    }
-    if (email === "") {
-      return {
-        success: 0,
-        data: "Please provied email",
-      };
-    }
-    let emailValidate = this.validateEmail(email);
-    if (!emailValidate) {
-      return {
-        success: 0,
-        data: "Please provied valid email",
-      };
-    }
-    if (message === "") {
-      return {
-        success: 0,
-        data: "Please provied message",
-      };
-    }
-    return {
-      success: 1,
-    };
-  };
-  validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
+
   render() {
-    let { name, email, message } = this.state;
+    let { name, email, message, spinner } = this.state;
     return (
       <div style={style.container}>
         <p style={style.title_text}>Contact Me</p>
@@ -88,6 +56,7 @@ class Contact extends React.Component {
             <Form.Label style={{ color: "white" }}>Name</Form.Label>
             <Form.Control
               type="text"
+              value={name}
               onChange={(v) => {
                 name = v.target.value;
                 this.setState({ name });
@@ -98,6 +67,7 @@ class Contact extends React.Component {
             <Form.Label style={{ color: "white" }}>Email</Form.Label>
             <Form.Control
               type="email"
+              value={email}
               onChange={(v) => {
                 email = v.target.value;
                 this.setState({ email });
@@ -109,6 +79,7 @@ class Contact extends React.Component {
           <Form.Group as={Col} md="12" controlId="exampleForm.ControlTextarea1">
             <Form.Label style={{ color: "white" }}>How can i Help?</Form.Label>
             <Form.Control
+              value={message}
               as="textarea"
               size="lg"
               rows="4"
@@ -127,6 +98,14 @@ class Contact extends React.Component {
             }}
           >
             Send Message
+            {spinner && (
+              <Spinner
+                variant="light"
+                animation="border"
+                size="sm"
+                style={style.spinner}
+              />
+            )}
           </Button>
         </div>
       </div>
