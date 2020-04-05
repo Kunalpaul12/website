@@ -8,6 +8,7 @@ import emailjs from "emailjs-com";
 import Spinner from "react-bootstrap/Spinner";
 import config from "../../config/email";
 import { validator } from "./validator";
+import contact from "../../config/contact";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Contact extends React.Component {
         <p style={style.des_text}>
           If you’d like to chat about a project please fill in the form below
           <br />
-          and I’ll get back within 1-2 days.
+          and I’ll get back or {contact.phone}.
         </p>
         <div style={style.name_email_view}>
           <Form.Group as={Col} md="6" controlId="formGroupName">
