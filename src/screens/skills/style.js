@@ -21,7 +21,8 @@ export default {
     width: "95%",
     marginLeft: "auto",
     marginRight: "auto",
-    //border: "1px solid white",
+    // border: "1px solid white",
+    // borderRadius: 10,
   },
   content_other_view: {
     display: "flex",
@@ -29,8 +30,23 @@ export default {
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "2%",
+    marginBottom: "1%",
     //border: "1px solid white",
   },
+  inner_tittle_view: {
+    display: "flex",
+    width: "11%",
+    justifyContent: "space-around",
+  },
+  inner_icon_view: {
+    display: "flex",
+    border: "1px solid white",
+    borderRadius: 10,
+    marginLeft: "2%",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
   icon_view: {
     marginLeft: "2%",
   },
