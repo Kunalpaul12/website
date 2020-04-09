@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
   faGithubSquare,
-  faLinkedin
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 class Homepage extends React.Component {
@@ -19,6 +19,9 @@ class Homepage extends React.Component {
     return (
       <div style={style.container}>
         <div style={style.des_view}>
+          <p style={style.title_text}>
+            “‎Someone's opinion of you does not have to become your reality.”
+          </p>
           <p style={style.header_text}>
             Hi , I'm Kunal Self taugh <br></br> programer
           </p>

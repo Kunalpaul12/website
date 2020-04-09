@@ -1,36 +1,57 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import "./style.scss";
-import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "../../screens/homepage";
+import * as Bootstrap from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import Home from "../../screens/about";
 import Project from "../../screens/project";
 import Skills from "../../screens/skills";
 import Contact from "../../screens/contact";
+import style from "./style";
 
 class NavBar extends React.Component {
-  style = {
-    color: "#ffffff",
-  };
   render() {
     return (
       <Router>
-        <Navbar>
-          <Nav>
-            <Link style={this.style} to="/">
-              About
-            </Link>
-            <Link style={this.style} to="/project">
-              Projects
-            </Link>
-            <Link style={this.style} to="/skills">
-              Skills
-            </Link>
-            <Link style={this.style} to="/contact">
-              Contact
-            </Link>
-          </Nav>
-        </Navbar>
+        <Bootstrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Bootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Bootstrap.Navbar.Collapse id="responsive-navbar-nav">
+            <Bootstrap.Nav className="mr-auto">
+              <NavLink
+                activeStyle={style.activeLink}
+                style={style.linkStyle}
+                exact={true}
+                to="/"
+              >
+                About
+              </NavLink>
+              <NavLink
+                activeStyle={style.activeLink}
+                style={style.linkStyle}
+                to="/project"
+              >
+                Project
+              </NavLink>
+              <NavLink
+                activeStyle={style.activeLink}
+                style={style.linkStyle}
+                to="/skill"
+              >
+                Skills
+              </NavLink>
+              <NavLink
+                activeStyle={style.activeLink}
+                style={style.linkStyle}
+                to="/contact"
+              >
+                Contact
+              </NavLink>
+            </Bootstrap.Nav>
+          </Bootstrap.Navbar.Collapse>
+        </Bootstrap.Navbar>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -38,7 +59,7 @@ class NavBar extends React.Component {
           <Route path="/project">
             <Project />
           </Route>
-          <Route path="/skills">
+          <Route path="/skill">
             <Skills />
           </Route>
           <Route path="/contact">
