@@ -3,7 +3,7 @@ export default {
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    height: "100vh"
+    height: "100vh",
   },
   des_view: {
     display: "flex",
@@ -13,15 +13,21 @@ export default {
     width: "50%",
     //border: "2px solid red",
     justifyContent: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+  },
+  title_text: {
+    color: "white",
+    fontSize: 22,
+    alignSelf: "center",
+    marginBottom: "5%",
   },
   header_text: {
     color: "white",
     fontSize: 20,
-    alignSelf: "flex-start"
+    alignSelf: "flex-start",
   },
   des_text: {
-    color: "white"
+    color: "white",
   },
   img_social_button_view: {
     display: "flex",
@@ -29,17 +35,17 @@ export default {
     justifyContent: "space-between",
     flex: 0.32,
     //border: "2px solid red",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   line: {
     display: "flex",
     width: "15%",
-    borderBottom: "2px solid white"
+    borderBottom: "2px solid white",
   },
   button_view: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "10%"
-  }
+    width: "10%",
+  },
 };
