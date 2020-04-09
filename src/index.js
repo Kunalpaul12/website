@@ -4,11 +4,12 @@ import App from "./App";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 import WebFont from "webfontloader";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 WebFont.load({
   google: {
-    families: ["Pacifico", "sans-serif"]
-  }
+    families: ["Pacifico", "sans-serif"],
+  },
 });
 
 ReactDOM.render(
