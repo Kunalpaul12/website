@@ -1,0 +1,10 @@
+.tabClass {
+  background: grey;
+  color: aliceblue;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+.tabClass:hover {
+  color: #4b6cc1;
+}
