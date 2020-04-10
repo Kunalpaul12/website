@@ -25,7 +25,7 @@ export default {
     flexDirection: "row",
     alignItems: "center",
     marginLeft: "2%",
-    // border: "2px solid red",
+    //border: "2px solid red",
   },
   mobile_header_text: {
     display: "flex",
@@ -49,7 +49,7 @@ export default {
     flexDirection: "row",
     alignItems: "center",
     marginLeft: "2%",
-    // border: "2px solid red",
+    //border: "2px solid red",
   },
   web_header_icon_view: {
     display: "flex",
