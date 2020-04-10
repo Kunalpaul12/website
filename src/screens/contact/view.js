@@ -95,7 +95,12 @@ class Contact extends React.Component {
               />
             </Form.Group>
             <Form.Group>
-              <Col sm={{ span: 10, offset: 4 }}>
+              <Col
+                sm={{ span: 10, offset: 4 }}
+                xs={{ span: 10, offset: 4 }}
+                md={{ span: 10, offset: 4 }}
+                lg={{ span: 10, offset: 4 }}
+              >
                 <Button
                   style={style.button}
                   onClick={() => {
