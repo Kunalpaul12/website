@@ -41,11 +41,18 @@ export default {
     borderRadius: "100px",
     marginLeft: "auto",
     marginRight: "auto",
-    marginBottom: "1%",
-    width: "22%",
   },
   spinner: {
     marginLeft: "5%",
     marginBottom: "4%",
+  },
+  formView: {
+    display: "flex",
+    width: "80%",
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    //border: "1px solid white",
+    marginBottom: "2%",
   },
 };
