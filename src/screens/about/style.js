@@ -18,16 +18,19 @@ export default {
   title_text: {
     color: "white",
     fontSize: 22,
+    fontWeight: "bold",
     alignSelf: "center",
     marginBottom: "5%",
   },
   header_text: {
     color: "white",
-    fontSize: 20,
+    fontSize: 19,
+    fontWeight: "bold",
     alignSelf: "flex-start",
   },
   des_text: {
     color: "white",
+    fontSize: 18,
   },
   img_social_button_view: {
     display: "flex",

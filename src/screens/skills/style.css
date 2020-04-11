@@ -8,3 +8,9 @@
 .tabClass:hover {
   color: #4b6cc1;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #4b6cc1 !important;
+}
