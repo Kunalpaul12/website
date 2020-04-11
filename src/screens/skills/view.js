@@ -14,7 +14,7 @@ class Skills extends React.Component {
     const { web, mobile, testing, language, repository } = data;
     return (
       <div style={style.container}>
-        <Bootstrap.Tabs defaultActiveKey="web">
+        <Bootstrap.Tabs variant="pills" defaultActiveKey="web">
           <Bootstrap.Tab tabClassName={"tabClass"} eventKey="web" title="Web">
             <Table iconName={"faGlobe"} name={web.name} data={web.data} />>
           </Bootstrap.Tab>

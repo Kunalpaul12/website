@@ -4,11 +4,9 @@ import userPic from "../../img/user.png";
 import "./style.scss";
 import style from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookSquare,
-  faGithubSquare,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import * as faSoild from "@fortawesome/free-solid-svg-icons";
+import * as faBrand from "@fortawesome/free-brands-svg-icons";
+import { link } from "../../public/screen/about";
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -23,14 +21,17 @@ class Homepage extends React.Component {
             “‎Someone's opinion of you does not have to become your reality.”
           </p>
           <p style={style.header_text}>
-            Hi , I'm Kunal Self taugh <br></br> programer
+            Hi , I'm Kunal a Self taugh <br></br> programer{" "}
+            <FontAwesomeIcon color="pink" size="sm" icon={faSoild.faCode} />
           </p>
           <p style={style.des_text}>
-            Hi , I am a self taught Software Engineer with over 3.7 year of
-            experiences in IT Industry. I got graduated from Electronics and
-            Telecommunication Engineering field from Mumbai University. I am
-            current working for Valuefy Solution, being start up company i got
-            opportunity to explore my knowledge in various dimension.
+            First and foremost, I love writing code. Ever since writing my first
+            program and manipulating it to get desired output, it was almost
+            magic being able to get the computer to do whatever I wanted just by
+            typing in these funny little symbols ,limited only by my own
+            imagination and ingenuity. Being an electronic and telecommunication
+            engineer and working as a software developer provide me a greater
+            control over hardware and software.
           </p>
         </div>
         <div style={style.img_social_button_view}>
@@ -39,30 +40,27 @@ class Homepage extends React.Component {
           <div style={style.button_view}>
             <FontAwesomeIcon
               onClick={() => {
-                window.open(
-                  "https://www.facebook.com/kunal.pal.5621",
-                  "_blank"
-                );
+                window.open(link.facebook, "_blank");
               }}
               color="white"
               size="lg"
-              icon={faFacebookSquare}
+              icon={faBrand.faFacebookSquare}
             />
             <FontAwesomeIcon
               onClick={() => {
-                window.open("https://github.com/Kunalpaul12", "_blank");
+                window.open(link.github, "_blank");
               }}
               color="white"
               size="lg"
-              icon={faGithubSquare}
+              icon={faBrand.faGithubSquare}
             />
             <FontAwesomeIcon
               onClick={() => {
-                window.open("https://www.linkedin.com/in/kunaldev", "_blank");
+                window.open(link.linkedin, "_blank");
               }}
               color="white"
               size="lg"
-              icon={faLinkedin}
+              icon={faBrand.faLinkedin}
             />
           </div>
         </div>
