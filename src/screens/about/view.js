@@ -21,7 +21,7 @@ class Homepage extends React.Component {
             “‎Someone's opinion of you does not have to become your reality.”
           </p>
           <p style={style.header_text}>
-            Hi , I'm Kunal a Self taugh <br></br> programer{" "}
+            Hi , I'm Kunal a Self taught <br></br> programer{" "}
             <FontAwesomeIcon color="pink" size="sm" icon={faSoild.faCode} />
           </p>
           <p style={style.des_text}>
